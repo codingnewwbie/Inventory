@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,9 +11,17 @@ public class MainUI : BaseUI
     private int _gold;
     private int _exp;
 
-    private Button _statusButton;
-    private Button _inventoryButton;
-    
+    [SerializeField] private Button _statusButton;
+    [SerializeField] private Button _inventoryButton;
+
+    public override void Init(UIManager uiManager)
+    {
+        base.Init(uiManager);
+        
+        _statusButton.onClick.AddListener(OnClickStatButton);
+        _inventoryButton.onClick.AddListener(OnClickInvenButton);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,5 +37,15 @@ public class MainUI : BaseUI
     protected override UIState GetUIState()
     {
         return UIState.Main;
+    }
+    
+    void OnClickStatButton()
+    {
+        uiManager.OpenStatus();
+    }
+
+    void OnClickInvenButton()
+    {
+        uiManager.OpenInventory();
     }
 }

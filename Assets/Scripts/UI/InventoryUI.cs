@@ -5,8 +5,15 @@ using UnityEngine.UI;
 
 public class InventoryUI : BaseUI
 {
-    private Button _backButton;
-    
+    [SerializeField] private Button _backButton;
+
+    public override void Init(UIManager uiManager)
+    {
+        base.Init(uiManager);
+        
+        _backButton.onClick.AddListener(OnClickBackButton);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,5 +29,10 @@ public class InventoryUI : BaseUI
     protected override UIState GetUIState()
     {
         return UIState.Inventory;
+    }
+    
+    void OnClickBackButton()
+    {
+        uiManager.OpenMainMenu();
     }
 }
