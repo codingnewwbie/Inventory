@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : Singleton<GameManager>
 {
     public Character player;
+    public ItemData itemData;
 
     protected override void Awake()
     {

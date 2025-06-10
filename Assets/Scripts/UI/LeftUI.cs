@@ -23,13 +23,7 @@ public class LeftUI : BaseUI
         nameText.text = GameManager.Instance.player.Name;
         rankText.text = GameManager.Instance.player.Rank;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    
     protected override UIState GetUIState()
     {
         return UIState.None;

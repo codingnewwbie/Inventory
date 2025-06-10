@@ -23,16 +23,7 @@ public class StatusUI : BaseUI
     // Start is called before the first frame update
     void Start()
     {
-        APText.text = GameManager.Instance.player.Attack.ToString();
-        DPText.text = GameManager.Instance.player.Defense.ToString();
-        HPText.text = GameManager.Instance.player.Hp.ToString();
-        CriText.text = GameManager.Instance.player.Critical.ToString();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        UpdateStatusUI();
     }
 
     protected override UIState GetUIState()
@@ -44,4 +35,14 @@ public class StatusUI : BaseUI
     {
         uiManager.OpenMainMenu();
     }
+    
+    
+    public void UpdateStatusUI()
+    {
+        APText.text = GameManager.Instance.player.Attack.ToString();
+        DPText.text = GameManager.Instance.player.Defense.ToString();
+        HPText.text = GameManager.Instance.player.Hp.ToString();
+        CriText.text = GameManager.Instance.player.Critical.ToString();
+    }
+
 }
