@@ -11,6 +11,14 @@ public class GameManager : Singleton<GameManager>
         base.Awake();
         
         player = FindObjectOfType<Character>();
+        SetData();
+    }
+
+
+    private void SetData()
+    {
+        player.SetName("Chad");
+        player.SetRank("Giga");
     }
 
     // Start is called before the first frame update

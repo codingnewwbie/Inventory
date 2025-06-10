@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class InventoryUI : BaseUI
 {
     [SerializeField] private Button _backButton;
+    [SerializeField] private TextMeshProUGUI countText;
+    [SerializeField] private TextMeshProUGUI amountText;
 
     public override void Init(UIManager uiManager)
     {
@@ -17,7 +20,7 @@ public class InventoryUI : BaseUI
     // Start is called before the first frame update
     void Start()
     {
-        
+       
     }
 
     // Update is called once per frame

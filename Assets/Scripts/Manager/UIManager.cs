@@ -6,6 +6,7 @@ using UnityEngine;
 public enum UIState
 
 {
+    None,
     Main,
     Status,
     Inventory,
