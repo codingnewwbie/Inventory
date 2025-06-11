@@ -99,7 +99,6 @@ public class InventoryUI : BaseUI
         if (emptySlot != null)
         {
             emptySlot.item = data;
-            emptySlot.quantity = 1;
             UIUpdate();
             GameManager.Instance.itemData = null;
             return;
